@@ -1,13 +1,15 @@
 ﻿<html lang="en" dir="ltr"><head>
 <meta charset="utf-8" />
 <style>
-	table tr td div.hebrew { font-weight: bold; font-size: x-large }
-	table tr td div.english { font-weight: bold; font-size: large }
-	div.hebrew_line { float: left; padding-left: 25%; font-size: large; font-style: italic; clear: left }
-	div.english_line { float: left; padding-left: 25%; font-size: large; clear: left }
+	tr td div.hebrew { font-weight: bold; font-size: 18px }
+	tr td div.english { font-weight: bold; font-size: 14px }
+	div.hebrew_line { float: left; padding-left: 25%; font-size: 14px; font-style: italic; clear: left }
+	div.english_line { float: left; padding-left: 25%; font-size: 14px; clear: left }
 	div#footer { clear: left }
-	commentary { font-size: small; font-family: "Courier New", Courier, monospace }
-	comentary { font-size: small; font-family: "Courier New", Courier, monospace }
+	commentary { font-size: 10px; font-family: "Courier New", Courier, monospace; display: none }
+	commentary.show {
+		display: block;
+	}
 </style>
 </head><body>
 
@@ -368,49 +370,6 @@
 	</div>
 
 </div>
-
-<script type="text/javascript">
-	$s.welcome = $s.commentary_column.find('#welcome');
-	$s.box = $s.commentary_column.find('#box');
-	$s.title = $s.commentary_column.find('#title');
-	$s.title.hide(0).animate({opacity:'0'},0).show(0);
-	$s.quotes = $s.commentary_column.find('#quotes');
-	$s.quotes.hide(0).animate({opacity:'0'},0).show(0);
-	$s.one = $s.quotes.find('#one');
-	$s.one.hide(0).animate({opacity:'0'},0);
-	$s.two = $s.quotes.find('#two');
-	$s.two.hide(0).animate({opacity:'0'},0);
-	$s.three = $s.quotes.find('#three');
-	$s.three.hide(0).animate({opacity:'0'},0);
-	$s.begin = $s.commentary_column.find('#begin');
-	$s.begin.hide(0);
-	$s.begin.bind('click dblclick',function(){
-		$s.siddur_column.find('#next').trigger('click');
-	});
-	$s.welcome.hide(0).animate({opacity:'0'},0).delay(1000).show(0).animate({opacity:'1'},2000);
-	$s.welcome.animate({left:'0px'},{duration:4000,queue:false});
-	$s.box.hide(0).animate({opacity:'0'},0).delay(1000).show(0).animate({opacity:'1',width:'320px'},1000,function(){
-		$s.box.css({border:'1px solid #e8c59c'}).animate({height:'240px'},1500);
-		$s.title.delay(500).animate({opacity:'1'},2000);
-		$s.quotes.delay(900).animate({opacity:'1'},2600);
-		$s.intro(3200);
-	});
-	$s.intro = function(delay){
-		$s.begin.delay(delay+2000).fadeIn(1500);
-		$s.one.delay(delay).show(0).animate({opacity:'1'},2600).delay(2600).fadeOut(1000).animate({opacity:'0'},0,function(){
-			$s.one.hide(0);
-			$s.two.show(0).animate({opacity:'1'},2600).delay(2600).fadeOut(1000).animate({opacity:'0'},0,function(){
-				$s.two.hide(0);
-				$s.three.show(0).animate({opacity:'1'},2600,function(){
-					$s.three.delay(3600).fadeOut(1000).animate({opacity:'0'},0,function(){
-						$s.three.hide(0);
-						$s.intro(200);
-					});
-				});
-			});
-		});
-	}
-</script>
 
 </div>
 
@@ -4102,7 +4061,7 @@
 
 
 
-<div id="header"><span class="hebrew">äshəréinu, mäh tov chëləqénu, umäh naim goralénu, umäh yafah yərüshshoténu;</span></div><comentary><p><i>How good is our portion! How pleasant is our lot! And how beautiful is our inheritance! </i>— Making these exclamations can be compared to a child who boasts how great his father is, even though he does not appreciate who his father really is and how he is great. Similarly, we boast of our unique merit in reciting the <i>Shema, </i>even though — at this point in prayer — we do not fully comprehend the greatness of the <i>Shema. </i>For this reason, this portion of prayer is called <i>Kerias Shema Ketanah, </i>"the small <i>Kerias Shema,</i>" because we are reciting the <i>Shema </i>while still on a low level.</p>
+<div id="header"><span class="hebrew">äshəréinu, mäh tov chëləqénu, umäh naim goralénu, umäh yafah yərüshshoténu;</span></div><commentary><p><i>How good is our portion! How pleasant is our lot! And how beautiful is our inheritance! </i>— Making these exclamations can be compared to a child who boasts how great his father is, even though he does not appreciate who his father really is and how he is great. Similarly, we boast of our unique merit in reciting the <i>Shema, </i>even though — at this point in prayer — we do not fully comprehend the greatness of the <i>Shema. </i>For this reason, this portion of prayer is called <i>Kerias Shema Ketanah, </i>"the small <i>Kerias Shema,</i>" because we are reciting the <i>Shema </i>while still on a low level.</p>
 
   <p>This phrase can also be interpreted as follows: </p>
 
@@ -9690,7 +9649,7 @@ You open Your hand and satiate the desire of every living being.</english></div>
 
 
 
-<div id="header"><span class="hebrew"><hebrew>vəhaofännim vəcheeiot häqqođësh bərääsh gađol mïtənäshsəim</hebrew></span></div><comentary><p><i>And the ofanim and the holy chayos<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=1531448&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=376">376*</a> rise… with a great clamor</i> – The clamor of the <i>ofanim</i> and the<i> chayos</i> comes from the fact that they know that there is a level of G-dliness that they cannot comprehend. The <i>seraphim</i> comprehend the G-dly energy that vitalizes creation and are therefore consumed with yearning to bond with Him. The <i>chayos</i> and the <i>ofanim,</i> by contrast, know that they derive from a G-dly source, but are unaware of the nature of that source. They are motivated to bond with Him, but because of this lack of awareness, their desire is impetuous and chaotic, an unbridled and unconstrained want. Therefore, it is expressed in a “clamor.”</p>
+<div id="header"><span class="hebrew"><hebrew>vəhaofännim vəcheeiot häqqođësh bərääsh gađol mïtənäshsəim</hebrew></span></div><commentary><p><i>And the ofanim and the holy chayos<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=1531448&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=376">376*</a> rise… with a great clamor</i> – The clamor of the <i>ofanim</i> and the<i> chayos</i> comes from the fact that they know that there is a level of G-dliness that they cannot comprehend. The <i>seraphim</i> comprehend the G-dly energy that vitalizes creation and are therefore consumed with yearning to bond with Him. The <i>chayos</i> and the <i>ofanim,</i> by contrast, know that they derive from a G-dly source, but are unaware of the nature of that source. They are motivated to bond with Him, but because of this lack of awareness, their desire is impetuous and chaotic, an unbridled and unconstrained want. Therefore, it is expressed in a “clamor.”</p>
 
 <p>More specifically, the “clamor” comes about because the existence of the <i>chayos</i> and the <i>ofanim</i> is much coarser and more materially oriented than that of the <i>seraphim.</i><a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=1531448&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=377">377*</a> As such, their efforts to rise above themselves and bond with G-d cause more “noise.” To illustrate with a material example: When refined and pure substances burn, they make little if any noise, but when coarse substances burn, they crackle loudly. Indeed, the coarser the substance, the greater the noise. Therefore it is the <i>chayos</i> and the <i>ofanim</i> who “clamor” in their desire for G-d<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=1531448&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=378">378*</a> (<i>Likkutei Torah</i>; <i>Toras Shmuel,</i> <i>Toras Menachem</i>).<sup name="endnote_ref" index="285">cclxxxv*</a></p>
 
@@ -14588,7 +14547,7 @@ And G-d passed before him and proclaimed:</english></div>
 
 
 
-<div id="header"><span class="hebrew">häbet mïshshoméiïm urəeh</span></div><comentary><p><i>Look down from Heaven and see </i>— The <i>Tachanun </i>prayer was instituted primarily to evoke Divine compassion in the era of exile<b>.</b> On this basis, we can understand the nature of this request. In the era of exile, "the Holy One, blessed be He, has withdrawn to the higher reaches [of the celestial rungs]"<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=2353842&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=353">353*</a><i>k'li, </i>a medium, that must adjust itself in order to receive the light. As such, the gentile nations are also capable of receiving this light.</p>
+<div id="header"><span class="hebrew">häbet mïshshoméiïm urəeh</span></div><commentary><p><i>Look down from Heaven and see </i>— The <i>Tachanun </i>prayer was instituted primarily to evoke Divine compassion in the era of exile<b>.</b> On this basis, we can understand the nature of this request. In the era of exile, "the Holy One, blessed be He, has withdrawn to the higher reaches [of the celestial rungs]"<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=2353842&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=353">353*</a><i>k'li, </i>a medium, that must adjust itself in order to receive the light. As such, the gentile nations are also capable of receiving this light.</p>
 
   <p>To cause G-d's light to be focused on the Jewish people, we ask him to "Look down from Heaven." "Heaven" (shmym) is a composite of the words shm mym, "water is there," referring to the Torah which is described as water.<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=2353842&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=354">354*</a></p>
 
@@ -17812,7 +17771,7 @@ And G-d passed before him and proclaimed:</english></div>
 
 
 
-<div id="header"><span class="hebrew">heeiom, yom rïshon bäshshäbot</span></div><comentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
+<div id="header"><span class="hebrew">heeiom, yom rïshon bäshshäbot</span></div><commentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
 
 <p><i>Shabbos</i> is entirely above time. Hence, each week the cycle of time begins anew. Therefore even though several thousands of years have passed since Creation, we say: “Today is the first day…,” “Today is the second day…,” etc. For indeed, it is the first day, i.e., the same spiritual energies that were revealed on the first day of Creation are revealed on the first day of every week.</p>
 
@@ -18324,7 +18283,7 @@ And G-d passed before him and proclaimed:</english></div>
 
 
 
-<div id="header"><span class="hebrew">heeiom, yom rəvii bäshshäbot</span></div><comentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
+<div id="header"><span class="hebrew">heeiom, yom rəvii bäshshäbot</span></div><commentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
 
 <p><i>Shabbos</i> is entirely above time. Hence, each week the cycle of time begins anew. Therefore even though several thousands of years have passed since Creation, we say: “Today is the first day…,” “Today is the second day…,” etc. For indeed, it is the first day, i.e., the same spiritual energies that were revealed on the first day of Creation are revealed on the first day of every week.</p>
 
@@ -18500,7 +18459,7 @@ And G-d passed before him and proclaimed:</english></div>
 
 
 
-<div id="header"><span class="hebrew">heeiom, yom chämishi bäshshäbot</span></div><comentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
+<div id="header"><span class="hebrew">heeiom, yom chämishi bäshshäbot</span></div><commentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
 
 <p><i>Shabbos</i> is entirely above time. Hence, each week the cycle of time begins anew. Therefore even though several thousands of years have passed since Creation, we say: “Today is the first day…,” “Today is the second day…,” etc. For indeed, it is the first day, i.e., the same spiritual energies that were revealed on the first day of Creation are revealed on the first day of every week.</p>
 
@@ -18634,7 +18593,7 @@ And G-d passed before him and proclaimed:</english></div>
 
 
 
-<div id="header"><span class="hebrew">heeiom, yom shïshshi bäshshäbot</span></div><comentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
+<div id="header"><span class="hebrew">heeiom, yom shïshshi bäshshäbot</span></div><commentary><p><i>Today is the … day of the week</i> – The phrase “the day of the week” is a non-literal translation. Verbatim, the phrase would be rendered “…the [first, second, third, etc.] day of the <i>Shabbos</i>.”</p>
 
 <p><i>Shabbos</i> is entirely above time. Hence, each week the cycle of time begins anew. Therefore even though several thousands of years have passed since Creation, we say: “Today is the first day…,” “Today is the second day…,” etc. For indeed, it is the first day, i.e., the same spiritual energies that were revealed on the first day of Creation are revealed on the first day of every week.</p>
 
@@ -20684,11 +20643,21 @@ And G-d passed before him and proclaimed:</english></div>
 
 <div id="header"><span class="hebrew"><hebrew>zachor ët yom</hebrew></span></div><commentary><p>The spirit of <i>Shabbos</i> is to be extended and connected to each of the days of the week. Just as <i>Shabbos </i>is a day of spiritual awareness, so too, during each of the week days there is a time when a person rises above his material concerns. This is the time of prayer. This spiritual activity elevates all of the Torah the person studies and the <i>mitzvos</i> he performs throughout the entire day (<i>Likkutei Torah</i>).<a href="http://www.chabad.org//WebServices/Books/Siddur/SiddurData?request=references&aid=2355633&line=-1&reference_select=footnote_ref&reference_html=1&reference_index=503">503*</a></p></commentary>
 
+<script type="text/javascript">
 
+var acc = document.getElementsByTagName("hr");
+var i;
 
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.previousElementSibling.classList.toggle("show");
+    }
+	acc[i].previousElementSibling.previousElementSibling.onclick = function(){
+        this.nextElementSibling.classList.toggle("show");
+    }
+}
 
+</script>
 <hr />
-
-
 
 </body></html>
