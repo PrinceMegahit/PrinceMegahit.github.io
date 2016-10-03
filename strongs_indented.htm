@@ -2,11 +2,40 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
+		var hebrewOnly = /[^\u05d0-\u05ea]/g;
+		var vowelsOnly = /[^\u05b0-\u05bb]/g;
+		var hollow = [0x05d5, 0x05d9];
+		var nonhollowVowels = [0x05b7, 0x05b8];
+		var weak = /אעהחיונ/;
 		/*$("td.autocolspan").each(function(){
 			var sum = 0;
 			$(this).siblings().each(function(){ sum += parseInt($(this).attr('colspan')) || 1 });
 			$(this).attr('colspan', $(this).parents("table:first").find("tr:first th, tr:first td").length - sum);
 		});*/
+		$('tr').click(function() {
+			var prevSibling = $(this);
+			while ((prevSibling.children().first().attr('style') || '').length > 0) {
+				prevSibling = prevSibling.prev();
+				prevSibling.show();
+			}
+			var nextSibling = $(this).next();
+			while ((nextSibling.children().first().attr('style') || '').length > 0) {
+				nextSibling.show();
+				nextSibling = nextSibling.next();
+			}
+		});
+		
+		$('tr td:first-child').each(function() {
+			if ($($(this).siblings()[1]).text().indexOf('[Verb]') == -1 || hollow.indexOf($(this).text().replace(hebrewOnly, '').charCodeAt(1)) == -1 || nonhollowVowels.indexOf($(this).text().replace(vowelsOnly, '').charCodeAt(1)) != -1)
+				$(this).parent().addClass('hollow');
+			else if ($($(this).siblings()[1]).text().indexOf('[Verb]') == -1 || weak.test($(this).text().replace(hebrewOnly, '')))
+				$(this).parent().addClass('weak');
+			else {
+				var vowels = $(this).text().replace(vowelsOnly, '');
+				if ($($(this).siblings()[1]).text().indexOf('[Verb]') == -1 || vowels.charCodeAt(0) != 0x05b8 || vowels.charCodeAt(1) != 0x05b7)
+					$(this).parent().addClass('qal');
+			}
+		});
 	});
 </script>
 <style type="text/css">
@@ -24,12 +53,16 @@
 	.imp6 { background-color: violet }
 </style></head><body>
 
-<span onclick="$('.imp1').toggle();"><label><input type="checkbox" checked="checked" id="imp1" />500+ occurences</label></span>
-<span onclick="$('.imp2').toggle();"><label><input type="checkbox" checked="checked" />200+ occurences</label></span>
-<span onclick="$('.imp3').toggle();"><label><input type="checkbox" checked="checked" />100+ occurences</label></span>
-<span onclick="$('.imp4').toggle();"><label><input type="checkbox" checked="checked" />50+ occurences</label></span>
-<span onclick="$('.imp5').toggle();"><label><input type="checkbox" checked="checked" />16+ occurences</label></span>
-<span onclick="$('.imp6').toggle();"><label><input type="checkbox" checked="checked" />16- occurences</label></span>
+<span onclick="$('.imp1').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />500+ occurences</label></span>
+<span onclick="$('.imp2').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />200+ occurences</label></span>
+<span onclick="$('.imp3').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />100+ occurences</label></span>
+<span onclick="$('.imp4').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />50+ occurences</label></span>
+<span onclick="$('.imp5').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />16+ occurences</label></span>
+<span onclick="$('.imp6').toggle($(this).children().children().is(':checked'));"><label><input type="checkbox" checked="checked" />16- occurences</label></span>
+<br />
+<span onclick="var check = $(this).children().children().is(':checked'); $('.hollow').toggle(!check);"><label><input type="checkbox" />Show only hollow verbs</label></span>
+<span onclick="var check = $(this).children().children().is(':checked'); $('.weak').toggle(!check);"><label><input type="checkbox" />Show only weak verbs</label></span>
+<span onclick="var check = $(this).children().children().is(':checked'); $('.qal').toggle(!check);"><label><input type="checkbox" />Show only verbs in qal binyan</label></span>
 <br /><br /><br />
 
 <table>
